@@ -38,6 +38,18 @@ const getInfoSong = (id) => new Promise(async(resolve, reject) => {
     }
 })
 
+const getPlaylist = (id) => new Promise(async(resolve, reject) => {
+    try {
+        const res = await axios({
+            url: `/detailplaylist?id=${id}`,
+            method: 'get'
+        })
+        resolve(res)
+    } catch (error) {
+        reject(error)
+    }
+})
+
 export {
-    getHome, getSongMp3, getInfoSong
+    getHome, getSongMp3, getInfoSong, getPlaylist
 }

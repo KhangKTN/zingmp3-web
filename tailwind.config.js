@@ -53,13 +53,27 @@ module.exports = {
             '-webkit-transform': 'translateX(0)',
             'transform': 'translateX(0)'
           }
+        },
+        'tracking-in-contract': {
+          '0%': {
+            'letter-spacing': '1em',
+            'opacity': '0'
+          },
+          '40%': {
+            'opacity': '0.6'
+          },
+          '100%': {
+            'letter-spacing': 'normal',
+            'opacity': '1'
+          }
         }
 
       },
       animation: {
         'slide-right': 'slide-right 1s cubic-bezier(.25,.46,.45,.94) both',
         'slide-left': 'slide-left 1s cubic-bezier(.25,.46,.45,.94) both',
-        'slide-left-two': 'slide-left-two 1s cubic-bezier(.25,.46,.45,.94) both'
+        'slide-left-two': 'slide-left-two 1s cubic-bezier(.25,.46,.45,.94) both',
+        'text-animate': 'tracking-in-contract .5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;'
       }
     },
   },

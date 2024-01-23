@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import * as apis from '../apis'
 import {icons} from '../ultis/icon'
+import * as actions from '../store/actions'
 
 const {IoMdHeartEmpty, BsThreeDots, IoPlayCircleOutline, TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled,
     TbRepeat, TbArrowsShuffle, PiPauseCircle
 } = icons
-
 
 const Player = () => {
     const [song, setSong] = useState('')
@@ -15,7 +15,9 @@ const Player = () => {
     let [audioController, setAudioController] = useState(new Audio())
 
     const {currentSong, isPlay} = useSelector(state => state.music)
-    console.log(isPlay);
+    console.log('check current song:', currentSong);
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const fetchSong = async() => {
@@ -24,32 +26,33 @@ const Player = () => {
             if(res?.data.err === 0) setSong(res.data.data)
             //Get audio source
             let res1 = await apis.getSongMp3(currentSong)
-            // console.log(res1.data.data[128]);
             if(res1?.data.err === 0){
                 audioController.src = res1.data.data[128]
                 setSource(res1.data.data[128])
-            } 
-            console.log('check audio:', audioController.duration);
+            }
+            console.log('check source music:', audioController.src);
         }
         if(currentSong) fetchSong()
     }, [currentSong, source])
 
-    useEffect(() => {
-        if(!isPlay) return
-        let interval = setInterval(() => {
-            if(isPlay){
-                console.log(audioController.currentTime);
-                setTimeCur(getFormatTime(audioController.currentTime))
-            }
-        }, 1000);
-        return () => {
-            interval && clearInterval(interval)
-        }
-    }, [isPlay])
+    // useEffect(() => {
+    //     if(!isPlay) return
+    //     let interval = setInterval(() => {
+    //         if(isPlay){
+    //             console.log(audioController.currentTime);
+    //             setTimeCur(getFormatTime(audioController.currentTime))
+    //         }
+    //     }, 1000);
+    //     return () => {
+    //         interval && clearInterval(interval)
+    //     }
+    // }, [isPlay])
 
 
     const handlePlay = async() => {
         // setIsPlay(!isPlay)
+        console.log('click play');
+        dispatch(actions.setIsPlay(!isPlay))
         if(isPlay){
             audioController.pause()
             return
@@ -64,7 +67,7 @@ const Player = () => {
     }
 
     const getFormatTime = (time) => {
-        console.log('check time:', time);
+        // console.log('check time:', time);
         let minute = Math.round(time/60) 
         let second = Math.round(time%60) 
         if(second < 10) second = '0' + second
@@ -105,7 +108,6 @@ const Player = () => {
                 <div className="w-[30%]">
                     abc
                 </div>
-                <audio d></audio>
             </div>
         </div>
     )

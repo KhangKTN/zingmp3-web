@@ -13,7 +13,7 @@ const generalConfig = {
 const musicConfig = {
     ...generalConfig,
     key: 'music',
-    whitelist: ['currentSong']
+    whitelist: ['currentSong', 'isPlay']
 }
 
 const rootReducer = combineReducers({

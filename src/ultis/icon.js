@@ -1,7 +1,7 @@
 import { MdOutlineLibraryMusic } from "react-icons/md";
 import { FaRegChartBar, FaRegDotCircle } from "react-icons/fa";
 import { IoMusicalNotes, IoPlayCircleOutline } from "react-icons/io5";
-import { PiArrowRightThin, PiArrowLeftThin, PiPauseCircle } from "react-icons/pi";
+import { PiArrowRightThin, PiArrowLeftThin, PiPauseCircle, PiMusicNotesThin } from "react-icons/pi";
 import { IoIosSearch, IoMdHeartEmpty } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
 import { TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled, TbRepeat, TbArrowsShuffle } from "react-icons/tb";
@@ -13,6 +13,6 @@ export const icons = {
     //Icon for Header
     PiArrowLeftThin, PiArrowRightThin, IoIosSearch,
     //Icon for PlayerBar
-    IoMdHeartEmpty, BsThreeDots, IoPlayCircleOutline, IoPlayCircleOutline,  TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled,
-    TbRepeat, TbArrowsShuffle, PiPauseCircle
+    IoMdHeartEmpty, BsThreeDots, IoPlayCircleOutline,  TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled,
+    TbRepeat, TbArrowsShuffle, PiPauseCircle, PiMusicNotesThin
 }
