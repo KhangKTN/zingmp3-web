@@ -11,7 +11,6 @@ const Playlist = () => {
     useEffect(() => {
         const fetchPlaylist = async() => {
             const res = await apis.getPlaylist(id)
-            console.log(res);
             if(res?.data.err === 0) setPlaylist(res.data.data)
         }
         fetchPlaylist()

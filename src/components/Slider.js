@@ -53,7 +53,7 @@ const Slider = () => {
     }
 
     return(
-        <div className="flex gap-3 justify-center w-full">
+        <div className="flex gap-3 animate-slide-in-elliptic-left-fwd justify-center w-full">
             {banner && banner.length > 0 && banner.map((item) => (
                 <img onClick={() => handleClick(item)} key={item.encodeId} src={item.banner} className="slider-item cursor-pointer flex-1 w-[30%] rounded-xl"/>
             ))}

@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import path from './ultis/path';
 import * as actions from './store/actions'
 
+
 const App = () => {
     const dispatch = useDispatch()
 
@@ -15,9 +16,9 @@ const App = () => {
     return (
         <div className="">
             <Routes>
-                <Route path={path.PUBLIC} element={<Public />}>
-                    <Route path={path.HOME} element={<Home />}/>
-                    <Route path={path.LOGIN} element={<Login />}/>
+                <Route path={path.PUBLIC} element={<Public/>}>
+                    <Route path={path.HOME} element={<Home/>}/>
+                    <Route path={path.LOGIN} element={<Login/>}/>
                     <Route path={path.MY_MUSIC} element={<MyMusic/>}/>
                     <Route path={path.ALBUM} element={<Album/>}/>
                     <Route path={path.PLAYLIST} element={<Playlist/>}/>

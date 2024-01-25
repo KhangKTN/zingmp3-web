@@ -50,6 +50,18 @@ const getPlaylist = (id) => new Promise(async(resolve, reject) => {
     }
 })
 
+const getNewReleaseChart = () => new Promise(async(resolve, reject) => {
+    try {
+        const res = await axios({
+            url: `/newreleasechart`,
+            method: 'get'
+        })
+        resolve(res)
+    } catch (error) {
+        reject(error)
+    }
+})
+
 export {
-    getHome, getSongMp3, getInfoSong, getPlaylist
+    getHome, getSongMp3, getInfoSong, getPlaylist, getNewReleaseChart
 }

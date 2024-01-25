@@ -1,7 +1,7 @@
 import actionTypes from "../actions/actionTypes";
 
 const initState = {
-    currentSong: 'ZW7O9AI7',
+    currentSong: '',
     isPlay: false
 }
 

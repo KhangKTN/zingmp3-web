@@ -1,5 +1,4 @@
-import homeAPI  from "../../apis/homeAPI"
-import { useEffect } from "react"
+import { NewRelease } from "../../components"
 import Slider from "../../components/Slider"
 
 const Home = () => {
@@ -16,6 +15,7 @@ const Home = () => {
         <div className="h-full">
             <div className="h-full">
                 <Slider/>
+                <NewRelease/>
             </div>
         </div>
     )

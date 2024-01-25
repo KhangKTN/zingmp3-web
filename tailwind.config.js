@@ -18,7 +18,8 @@ module.exports = {
         'primary': '#ced9d9',
         'button': '#dce8e8',
         'player': '#c1d8d8',
-        'active': '#e7ebeb'
+        'active': '#e7ebeb',
+        'slider-bar':  '#0f7070'
       },
       colors: {
         'active': '#0f7070'
@@ -66,14 +67,44 @@ module.exports = {
             'letter-spacing': 'normal',
             'opacity': '1'
           }
+        },
+        'slide-in-elliptic-left-fwd': {
+          '0%': {
+            '-webkit-transform': 'translateX(-800px) rotateY(30deg) scale(0)',
+                    'transform': 'translateX(-800px) rotateY(30deg) scale(0)',
+            '-webkit-transform-origin': '-100% 50%',
+                    'transform-origin': '-100% 50%',
+            'opacity': '0'
+          },
+          '100%': {
+            '-webkit-transform': 'translateX(0) rotateY(0) scale(1)',
+                    'transform': 'translateX(0) rotateY(0) scale(1)',
+            '-webkit-transform-origin': '1800px 50%',
+                    'transform-origin': '1800px 50%',
+            'opacity': '1'
+          }
+        },
+        'fade-in-bck': {
+          '0%': {
+            '-webkit-transform': 'translateZ(80px)',
+                    'transform': 'translateZ(80px)',
+            'opacity': '0'
+          },
+          '100%': {
+            '-webkit-transform': 'translateZ(0)',
+                    'transform': 'translateZ(0)',
+            'opacity': '1'
+          }
         }
-
+        
       },
       animation: {
         'slide-right': 'slide-right 1s cubic-bezier(.25,.46,.45,.94) both',
         'slide-left': 'slide-left 1s cubic-bezier(.25,.46,.45,.94) both',
         'slide-left-two': 'slide-left-two 1s cubic-bezier(.25,.46,.45,.94) both',
-        'text-animate': 'tracking-in-contract .5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;'
+        'text-animate': 'tracking-in-contract .5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;',
+        'slide-in-elliptic-left-fwd': 'slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+        'fade-in-bck': 'fade-in-bck 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
       }
     },
   },
