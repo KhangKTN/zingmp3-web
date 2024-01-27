@@ -1,7 +1,11 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import Song from "./Song";
+import { useSelector } from "react-redux";
 
-const SongList = ({songlist, totalDuration}) => {
+const SongList = ({totalDuration}) => {
+
+    const {songs} = useSelector(state => state.music)
+    
     return(
         <div className="w-full h-full flex flex-col">
             <div className="flex w-full h-full gap-10 text-gray-500 font-medium uppercase p-3">
@@ -10,12 +14,9 @@ const SongList = ({songlist, totalDuration}) => {
                 <span className="flex-auto text-right">thời gian</span>
             </div>
             <div className="flex flex-col min-h-full">
-                {songlist?.map((item, index) => (
+                {songs?.map((item, index) => (
                     <Song key={item.encodeId} song={item}/>
                 ))}
-            </div>
-            <div className="text-gray-500 text-sm mt-3">
-                <span>{songlist?.length} bài hát / {totalDuration}</span>
             </div>
         </div>
     )

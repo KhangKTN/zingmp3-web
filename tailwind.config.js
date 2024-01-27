@@ -95,8 +95,28 @@ module.exports = {
                     'transform': 'translateZ(0)',
             'opacity': '1'
           }
+        },
+        'rotate-center': {
+          '0%': {
+            '-webkit-transform': 'rotate(0)',
+                    'transform': 'rotate(0)',
+          },
+          '100%': {
+            '-webkit-transform': 'rotate(360deg)',
+                    'transform': 'rotate(360deg)',
+          }
+        },
+        'rotate-pause': {
+          '0%': {
+            '-webkit-transform': 'rotate(0)',
+                    'transform': 'rotate(0)',
+                    'border-radius': '100%' 
+          },
+          '100%': {
+            '-webkit-transform': 'rotate(-360deg)',
+                    'transform': 'rotate(-360deg)',
+          }
         }
-        
       },
       animation: {
         'slide-right': 'slide-right 1s cubic-bezier(.25,.46,.45,.94) both',
@@ -104,7 +124,9 @@ module.exports = {
         'slide-left-two': 'slide-left-two 1s cubic-bezier(.25,.46,.45,.94) both',
         'text-animate': 'tracking-in-contract .5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;',
         'slide-in-elliptic-left-fwd': 'slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
-        'fade-in-bck': 'fade-in-bck 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
+        'fade-in-bck': 'fade-in-bck 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+        'rotate-center': 'rotate-center 10s linear infinite both',
+        'rotate-pause': 'rotate-pause .4s linear both'
       }
     },
   },

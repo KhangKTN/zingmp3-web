@@ -1,5 +1,5 @@
-import { NewRelease } from "../../components"
-import Slider from "../../components/Slider"
+import { NewRelease, SeasonTheme, Slider } from "../../components"
+
 
 const Home = () => {
 
@@ -16,6 +16,7 @@ const Home = () => {
             <div className="h-full">
                 <Slider/>
                 <NewRelease/>
+                <SeasonTheme/>
             </div>
         </div>
     )

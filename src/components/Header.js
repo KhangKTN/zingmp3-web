@@ -5,7 +5,7 @@ const { PiArrowLeftThin, PiArrowRightThin } = icons
 
 const Header = () => {
     return (
-        <div className="flex px-12 sticky top-0 items-center bg-[#ffffff00] shadow-md w-full justify-between backdrop-blur-md gap-3 h-[70px] mb-3">
+        <div className="flex px-12 z-50 sticky top-0 items-center bg-[#ffffff00] shadow-md w-full justify-between backdrop-blur-md gap-3 h-[70px] mb-3">
             <div className="flex items-center gap-6 h-full w-[70%]">
                 <div className="flex gap-6">
                     <PiArrowLeftThin className="size-6 hover:text-active cursor-pointer"/>

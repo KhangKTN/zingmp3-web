@@ -9,9 +9,10 @@ const {PiMusicNotesThin} = icons
 const Song = ({song}) => {
     const dispatch = useDispatch()
 
-    const handleClickPlay = () => {
+    const handleClickSong = () => {
         dispatch(actions.setCurrentSong(song.encodeId))
         dispatch(actions.setIsPlay(true))
+        dispatch(actions.setIsNext(true))
     }
 
     return(
@@ -19,14 +20,14 @@ const Song = ({song}) => {
             <div className="flex items-center gap-2 min-w-[50%]">
                 <PiMusicNotesThin className="size-5"/>
                 {/* <input type='checkbox' className="size-4 hidden hover:group-[]:block"/> */}
-                <img onClick={() => handleClickPlay()} className="size-10 rounded object-cover cursor-pointer" src={song.thumbnailM} />
+                <img onClick={() => handleClickSong()} className="size-10 rounded object-cover cursor-pointer" src={song.thumbnailM} />
                 <div className="flex flex-col w-full">
                     <h1 >{song?.title.length > 30 ? `${song?.title?.slice(0, 35)}...`: song.title}</h1>
                     <h1 className="text-gray-500 text-sm">{song.artistsNames}</h1>
                 </div>
             </div>
             <div className="w-[40%]">{song?.album?.title.length > 30 ? `${song?.album?.title.slice(0, 30)}...` : song.album?.title}</div>
-            <div className="flex-auto">{moment.unix(song?.duration*1000).format('mm:ss')}</div>
+            <div className="flex-auto">{moment.unix(song?.duration).format('mm:ss')}</div>
         </div>
     )
 }

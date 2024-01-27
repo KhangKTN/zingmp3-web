@@ -1,7 +1,9 @@
 import actionTypes from "../actions/actionTypes";
 
 const initState = {
-    banner: []
+    banner: {},
+    seasonTheme: {},
+    newRelease: {}
 }
 
 const appReducer = (state = initState, action) => {
@@ -9,7 +11,9 @@ const appReducer = (state = initState, action) => {
         case actionTypes.GET_HOME:
             return {
                 ...state,
-                banner: action.data?.filter(item => item.sectionType === 'banner') || null
+                banner: action.data?.filter(item => item.sectionId === 'hSlider') || null,
+                seasonTheme: action.data?.filter(item => item.sectionId === 'hSeasonTheme') || null,
+                newRelease: action.data?.filter(item => item.sectionType === 'new-release') || null,
             }
         default:
             return state
