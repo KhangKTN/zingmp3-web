@@ -4,10 +4,9 @@ import { sidebarLeftMenu } from '../ultis/menu'
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import path from '../ultis/path'
-import { document } from 'postcss'
 
-const active = 'py-3 px-4 bg-active text-active border-l-4 border-active'
-const notActive = 'py-3 px-4 hover:bg-active hover:text-active border-l-4'
+const active = 'py-3 px-4 bg-active text-active border-l-0 lg:border-l-4 lg:border-active'
+const notActive = 'py-3 px-4 hover:bg-active hover:text-active lg:border-l-4'
 
 const SidebarLeft = () => {
     const navigate = useNavigate()
@@ -20,7 +19,7 @@ const SidebarLeft = () => {
             <div className='flex flex-col'>
                 {sidebarLeftMenu.map((item, index) => (
                     <NavLink key={item.path} to={item.path} className={({isActive}) => isActive ? active : notActive}>
-                        <div className='flex items-center gap-4'>
+                        <div className='flex items-center gap-4 justify-center lg:justify-start'>
                             <span>{item.icon}</span>
                             <span className='hidden animate-text-animate lg:inline'>{item.text}</span>
                         </div>

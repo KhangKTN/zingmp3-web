@@ -24,14 +24,15 @@ const Slider = () => {
             let ele = arr.shift()
             arr.push(ele)
             for(let i = 0; i < banner.length; i++){
-                sliders[i].classList.remove('animate-slide-right', 'order-last', 'z-5', 'hidden', 'block')
-                sliders[i].classList.remove('animate-slide-left', 'order-first', 'z-10', 'hidden', 'block')
-                sliders[i].classList.remove('animate-slide-left-two', 'order-2', 'z-10', 'hidden', 'block')
-                if(i <= 2){
-                    sliders[arr[i]].classList.add('block')
+                sliders[i].classList.remove('animate-slide-right', 'order-last', 'z-5', 'hidden')
+                sliders[i].classList.remove('animate-slide-left', 'order-first', 'z-10', 'hidden')
+                sliders[i].classList.remove('animate-slide-left-two', 'order-2', 'z-10', 'hidden')
+                if(i > 2){
+                    sliders[arr[i]].classList.add('hidden')
+                    // console.log(sliders[arr[i]]);
                 }
-                else sliders[arr[i]].classList.add('hidden')
             }
+            if(arr.length > 4 && arr[arr.length - 1] === 0) sliders[arr[arr.length - 2]].classList.add('hidden')
             sliders[arr[2]]?.classList.add('animate-slide-right', 'order-last', 'z-5')
             sliders[arr[0]]?.classList.add('animate-slide-left', 'order-first', 'z-10')
             sliders[arr[1]]?.classList.add('animate-slide-left-two', 'order-2', 'z-10')
@@ -51,6 +52,8 @@ const Slider = () => {
             navigate(link)
         }
     }
+
+    console.log(banner);
 
     return(
         <div className="flex gap-3 animate-slide-in-elliptic-left-fwd justify-center w-full">

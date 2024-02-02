@@ -1,8 +1,8 @@
 import { MdOutlineLibraryMusic } from "react-icons/md";
-import { FaRegChartBar, FaRegDotCircle } from "react-icons/fa";
-import { IoMusicalNotes, IoPlayCircleOutline } from "react-icons/io5";
-import { PiArrowRightThin, PiArrowLeftThin, PiPauseCircle, PiMusicNotesThin } from "react-icons/pi";
-import { IoIosSearch, IoMdHeartEmpty } from "react-icons/io";
+import { FaRegChartBar, FaRegDotCircle, FaPlay } from "react-icons/fa";
+import { IoMusicalNotes, IoPlayCircleOutline, IoVolumeMuteOutline, IoVolumeMediumOutline, IoPause } from "react-icons/io5";
+import { PiArrowRightThin, PiArrowLeftThin, PiPauseCircle, PiMusicNotesThin, PiPlaylistFill } from "react-icons/pi";
+import { IoIosSearch, IoMdHeartEmpty, IoIosArrowForward } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
 import { TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled, TbRepeat, TbArrowsShuffle, TbRepeatOnce } from "react-icons/tb";
 
@@ -14,5 +14,10 @@ export const icons = {
     PiArrowLeftThin, PiArrowRightThin, IoIosSearch,
     //Icon for PlayerBar
     IoMdHeartEmpty, BsThreeDots, IoPlayCircleOutline,  TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled,
-    TbRepeat, TbArrowsShuffle, PiPauseCircle, PiMusicNotesThin, TbRepeatOnce
+    TbRepeat, TbArrowsShuffle, PiPauseCircle, PiMusicNotesThin, TbRepeatOnce, PiPlaylistFill, IoVolumeMuteOutline,
+    IoVolumeMediumOutline,
+    //Home
+    IoIosArrowForward,
+    //Button Play Album
+    FaPlay, IoPause
 }

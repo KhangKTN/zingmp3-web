@@ -5,7 +5,9 @@ const path = {
     STAR: '*',
     MY_MUSIC: 'mymusic',
     ALBUM: 'album/:title/:id',
-    PLAYLIST: 'playlist/:title/:id'
+    PLAYLIST: 'playlist/:title/:id',
+    ZINGCHART: 'zing-chart-tuan/:title/:id',
+    TOP100: 'top100'
 }
 
 export default path

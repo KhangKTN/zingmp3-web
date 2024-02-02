@@ -15,6 +15,7 @@ module.exports = {
       },
       backgroundColor:{
         'sidebar': '#dde4e4',
+        'sidebar-hidden': '#cce0e0',
         'primary': '#ced9d9',
         'button': '#dce8e8',
         'player': '#c1d8d8',
@@ -23,6 +24,9 @@ module.exports = {
       },
       colors: {
         'active': '#0f7070'
+      },
+      accentColor: {
+        'active':'#0f7070'
       },
       keyframes: {
         'slide-right': {

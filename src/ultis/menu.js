@@ -4,11 +4,6 @@ const {MdOutlineLibraryMusic, FaRegChartBar, FaRegDotCircle, IoMusicalNotes} = i
 
 export const sidebarLeftMenu = [
     {
-        path: 'mymusic',
-        text: 'Cá nhân',
-        icon: <IoMusicalNotes className="w-[24px] h-auto"/>
-    },
-    {
         path: '',
         text: 'Khám phá',
         // end: true,
@@ -23,5 +18,10 @@ export const sidebarLeftMenu = [
         path: 'follow',
         text: 'Theo dõi',
         icon: <MdOutlineLibraryMusic className="w-[24px] h-auto"/>
+    },
+    {
+        path: 'mymusic',
+        text: 'Cá nhân',
+        icon: <IoMusicalNotes className="w-[24px] h-auto"/>
     }
 ]

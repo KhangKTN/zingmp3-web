@@ -1,15 +1,8 @@
-import { NewRelease, SeasonTheme, Slider } from "../../components"
+import { NewRelease, SeasonTheme, Slider, Top100, WeekChart, ZingChart } from "../../components"
 
 
 const Home = () => {
 
-    /* useEffect(() => {
-        const fetchDataHome = async() => {
-            const res = await getHome()
-            console.log(res);
-        }
-        fetchDataHome();
-    }, []) */
 
     return(
         <div className="h-full">
@@ -17,6 +10,9 @@ const Home = () => {
                 <Slider/>
                 <NewRelease/>
                 <SeasonTheme/>
+                <ZingChart/>
+                <WeekChart/>
+                <Top100/>
             </div>
         </div>
     )

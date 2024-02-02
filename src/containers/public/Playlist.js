@@ -30,9 +30,9 @@ const Playlist = () => {
 
     return(
         <div className="flex xl:flex-row flex-col w-full gap-10 mt-5 xl:overflow-y-hidden">
-            <div className="xl:w-1/4 w-full flex xl:flex-col flex-row items-center gap-10 xl:gap-1">
-                <div className="w-[250px] relative cursor-pointer overflow-hidden rounded-xl group">
-                    <div className={`w-full shadow-xl ${!isPlay && 'group-hover:scale-110'} transition-all duration-300`}>
+            <div className="xl:w-[400px] w-full flex xl:flex-col flex-row items-center gap-5 xl:gap-1">
+                <div className="xl:w-[300px] w-[250px] relative cursor-pointer overflow-hidden rounded-xl group">
+                    <div className={`w-full shadow-xl ${!isPlay && 'group-hover:scale-110'} transition-all duration-500`}>
                         <img className={`w-full ${isRotate && isPlay ? 'rounded-full animate-rotate-center' : 'rounded-xl animate-rotate-pause'}`} src={playlist?.thumbnailM}></img>
                     </div>
                     <div className={`${isPlay ? '' : 'group-hover:bg-[#1212126c]'} text-white absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center`}>
@@ -50,7 +50,7 @@ const Playlist = () => {
                     </div>
                 </div>
             </div>
-            <div className="xl:w-3/4 w-full h-full overflow-y-auto">
+            <div className="flex-auto w-full h-full overflow-y-auto">
                 <div className="mb-3">Lời tựa<span className="text-gray-500 font-semibold"> {playlist?.sortDescription}</span></div>
                 <SongList 
                     totalDuration={playlist?.song?.totalDuration}

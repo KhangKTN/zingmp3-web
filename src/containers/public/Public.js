@@ -1,14 +1,17 @@
 import { Outlet } from "react-router-dom"
 import { Player, SidebarLeft, SidebarRight } from "../../components"
 import { Header } from "../../components"
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
 
 const Public = () => {
+    const [isShowRSidebar, setIsShowRSidebar] = useState(false)
+
     return (
         <div className="w-full h-screen flex flex-col">
             <div className="w-full h-full flex flex-auto bg-primary">
-                <div className="lg:w-[240px] w-16 min-h-full flex-none bg-sidebar">
+                <div className="lg:w-[240px] w-16 min-h-full flex-none lg:bg-sidebar bg-sidebar-hidden">
                     <SidebarLeft/>
                 </div>
                 <div className="flex-auto max-h-[calc(100vh-90px)] overflow-y-auto">
@@ -30,12 +33,12 @@ const Public = () => {
                         />
                     </div>
                 </div>
-                <div className="w-[100px] wide:block hidden wide:animate-slide-left flex-none bg-sidebar">
+                <div className={`w-[250px] shadow-xl fixed z-10 right-0 top-0 bottom-0 ${!isShowRSidebar && 'hidden'} wide:block animate-slide-left flex-none bg-primary`}>
                     <SidebarRight/>
                 </div>
             </div>
-            <div className="flex-none h-[90px] bg-player">
-                <Player/>
+            <div className="flex-none h-[90px] z-20 bg-player">
+                <Player isShowRSidebar={isShowRSidebar} setIsShowRSidebar={setIsShowRSidebar} />
             </div>
         </div>
     )

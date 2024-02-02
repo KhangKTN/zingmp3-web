@@ -1,27 +1,44 @@
 import { useEffect, useState } from "react"
-import * as apis from '../apis'
 import { useSelector } from "react-redux"
+import SongRelease from "./SongRelease";
+import {icons} from '../ultis/icon'
+
+const {IoIosArrowForward} = icons
 
 const NewRelease = () => {
     const {newRelease} = useSelector(state => state.app)
+    const [select, setSelect] = useState('all')
     const [data, setData] = useState({})
+
+    const styleAct = 'px-5 py-1 border-[1px] border-slate-400 rounded-full bg-slider-bar text-slate-50'
+    const styleNotAct = 'px-5 py-1 border-[1px] border-slate-400 rounded-full bg-button text-gray-600'
 
     useEffect(() => {
         newRelease && setData(newRelease[0])
     }, [newRelease])
 
+    const handleChange = (value) => {
+        setSelect(value)
+    }
+
     return(
         <div className="mt-12 w-full">
             <h1 className="text-2xl capitalize font-semibold">{data?.title}</h1>
-            <div className="grid grid-cols-4 xl:grid-cols-5 gap-5 w-full mt-3">
-                {/* {data?.items?.map(item => (
-                    <div key={item.encodeId} className="">
-                        <div className="w-full overflow-hidden  hover:opacity-80 rounded-lg">
-                            <img className="w-full cursor-pointer hover:scale-110 transition-all duration-300" src={item.thumbnail}></img>
-                        </div>
-                        <h1 className="mt-1">{item?.title}</h1>
-                    </div>
-                ))} */}
+            <div className="flex justify-between items-center my-3 text-sm">
+                <div className="flex gap-3">
+                    <button onClick={() => handleChange('all')} className={select === 'all' ? styleAct : styleNotAct}>TẤT CẢ</button>
+                    <button onClick={() => handleChange('vPop')} className={select === 'vPop' ? styleAct : styleNotAct}>VIỆT NAM</button>
+                    <button onClick={() => handleChange('others')} className={select === 'others' ? styleAct : styleNotAct}>KHÁC</button>
+                </div>
+                <div className="flex text-gray-500 cursor-pointer hover:text-active">
+                    <button className="">TẤT CẢ</button>
+                    <IoIosArrowForward className="size-5 ml-3"/>
+                </div>
+            </div>
+            <div className="grid grid-cols-2 xl:grid-cols-3 auto-rows-3 gap-x-10 gap-y-[2px] w-full max-h-[342px] overflow-hidden mt-3">
+                {data?.items && data?.items[select]?.map(item => (
+                    <SongRelease key={item.encodeId} song={item} isShowDate={1} hover={1}/>
+                ))}
             </div>
         </div>
     )
