@@ -4,7 +4,8 @@ const initState = {
     currentSong: '',
     isPlay: false,
     isNext: false,
-    songs: []
+    songs: null,
+    songRecent: []
 }
 
 const musicReducer = (state = initState, action) => {
@@ -28,6 +29,22 @@ const musicReducer = (state = initState, action) => {
             return{
                 ...state,
                 songs: action.data
+            }
+        case actionTypes.SONG_RECENT:
+            let songRecent = [...state.songRecent]
+            let index = songRecent.findIndex(item => item.encodeId === action.songId.encodeId)
+            if(index >= 0) songRecent.splice(index, 1)
+            songRecent.unshift(action.songId)
+            if(songRecent.length > 20) songRecent.pop()
+            // console.log(songRecent);
+            return{
+                ...state,
+                songRecent: songRecent
+            }
+        case actionTypes.CLEAR_RECENT:
+            return{
+                ...state,
+                songRecent: []
             }
         default:
             return state

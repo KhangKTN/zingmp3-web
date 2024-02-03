@@ -74,6 +74,19 @@ const getTop100 = () => new Promise(async(resolve, reject) => {
     }
 })
 
+const search = (keyword) => new Promise(async(resolve, reject) => {
+    try {
+        const res = await axios({
+            url: `/search`,
+            method: 'get',
+            params: {keyword}
+        })
+        resolve(res)
+    } catch (error) {
+        reject(error)
+    }
+})
+
 export {
-    getHome, getSongMp3, getInfoSong, getPlaylist, getNewReleaseChart, getTop100
+    getHome, getSongMp3, getInfoSong, getPlaylist, getNewReleaseChart, getTop100, search
 }

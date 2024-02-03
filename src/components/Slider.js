@@ -53,8 +53,6 @@ const Slider = () => {
         }
     }
 
-    console.log(banner);
-
     return(
         <div className="flex gap-3 animate-slide-in-elliptic-left-fwd justify-center w-full">
             {banner && banner.length > 0 && banner.map((item) => (

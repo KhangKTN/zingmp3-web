@@ -1,6 +1,6 @@
 import { memo, useEffect, useState } from "react"
 import {icons} from '../ultis/icon'
-import { UseDispatch, useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import moment from "moment";
 import * as actions from '../store/actions'
 import AudioLoading from "./AudioLoading";
@@ -9,14 +9,8 @@ const {PiMusicNotesThin, IoPlayCircleOutline} = icons
 
 const Song = ({song}) => {
     const dispatch = useDispatch()
-    const {currentSong, isPlay, songs} = useSelector(state => state.music)
-    const [songPlay, setSongPlay] = useState(false)
-    const [isCurrentAlbum, setIsCurrentAlbum] = useState(false)
-
-    useEffect(() => {
-        song.encodeId === currentSong ? setSongPlay(true) : setSongPlay(false)
-        songs.some(item => item.encodeId === currentSong) ? setIsCurrentAlbum(true) : setIsCurrentAlbum(false)
-    }, [currentSong])
+    const {currentSong, isPlay} = useSelector(state => state.music)
+    const [isHover, setIsHover] = useState(false)
 
     const handleClickSong = () => {
         dispatch(actions.setCurrentSong(song.encodeId))
@@ -25,15 +19,18 @@ const Song = ({song}) => {
     }
 
     return(
-        <div className={`${songPlay && isCurrentAlbum && 'bg-sidebar'} flex px-3 py-2 rounded-md gap-10 items-center justify-between hover:bg-sidebar border-t-[1px] border-[#0000000d]`}>
+        <div className={`${currentSong === song.encodeId && 'bg-sidebar'} flex px-3 py-2 rounded-md gap-10 items-center justify-between hover:bg-sidebar border-t-[1px] border-[#0000000d]`}>
             <div className="flex items-center gap-2 min-w-[50%] max-w-[50%]">
                 <PiMusicNotesThin className="size-5"/>
-                {/* <input type='checkbox' className="size-4 hidden hover:group-[]:block"/> */}
-                <div onClick={() => handleClickSong()} className="w-10 relative cursor-pointer">
-                    <img className="min-w-10 z-10 rounded" src={song.thumbnailM} />
+                <div onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} onClick={() => handleClickSong()} className="w-10 relative cursor-pointer">
+                    <img className="min-w-10 z-10 rounded" src={song.thumbnail} />
+                    {/* <div className="absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center">
+                        {songPlaying && isCurrentAlbum && isPlay && <AudioLoading w={20} h={20} border={0}/>}
+                        {songPlaying && isCurrentAlbum && !isPlay && <IoPlayCircleOutline className="size-10 text-white"/>}
+                    </div> */}
                     <div className="absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center">
-                        {songPlay && isCurrentAlbum && isPlay && <AudioLoading w={20} h={20} border={0}/>}
-                        {songPlay && isCurrentAlbum && !isPlay && <IoPlayCircleOutline className="size-5 text-white"/>}
+                        {isPlay && currentSong === song?.encodeId && <AudioLoading w={20} h={20} border={0} />}
+                        {((currentSong !== song?.encodeId && isHover) || (!isPlay && currentSong === song?.encodeId)) && <IoPlayCircleOutline className='size-8 text-white' />}
                     </div>
                 </div>
                 <div className="flex flex-col w-full">

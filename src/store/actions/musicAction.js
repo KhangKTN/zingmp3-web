@@ -21,6 +21,15 @@ export const setList = (data) => ({
     data
 })
 
+export const setSongRecent = (songId) => ({
+    type: actionTypes.SONG_RECENT,
+    songId
+})
+
+export const clearSongRecent = () => ({
+    type: actionTypes.CLEAR_RECENT
+})
+
 /* export const setList = (id) => async(dispatch) => {
     try {
         const res = await apis.getPlaylist(id)

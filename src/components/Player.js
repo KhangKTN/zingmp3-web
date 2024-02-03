@@ -39,6 +39,10 @@ const Player = ({isShowRSidebar, setIsShowRSidebar}) => {
             if(res1?.data.err === 0){
                 audioController.src = res1.data.data[128]
                 audioController.load()
+                const {encodeId, thumbnail, title, artistsNames} = res.data.data
+                dispatch(actions.setSongRecent({
+                    encodeId, thumbnail, title, artistsNames
+                }))
                 if(isPlay){
                     audioController.play();
                 }
@@ -47,7 +51,6 @@ const Player = ({isShowRSidebar, setIsShowRSidebar}) => {
                 audioController.src = null
                 toast.error("Bài hát này chỉ dành cho tài khoản VIP")
             }
-            console.log(audioController.src);
             setIsLoaded(true)
         }
         if(currentSong){
@@ -162,14 +165,12 @@ const Player = ({isShowRSidebar, setIsShowRSidebar}) => {
                         <h1 className="truncate">{song?.title}</h1>
                         <h1 className="text-gray-600 font-light text-xs">{song?.artistsNames}</h1>
                     </div>
-                    <IoMdHeartEmpty className="cursor-pointer min-w-4"/>
-                    <BsThreeDots className="cursor-pointer min-w-4"/>
                 </div>
                 <div className="flex-auto flex flex-col items-center">
                     <div className="flex items-center gap-6">
                         <TbArrowsShuffle onClick={() => handleShuffle()} title="Bật phát ngẫu nhiên" className={`size-5 cursor-pointer ${isShuffle && 'text-active'}`} />
                         <TbPlayerSkipBackFilled onClick={() => handlePrevious()} className={`size-5 hover:text-active cursor-pointer ${!song && 'cursor-not-allowed text-gray-500'}`}/>
-                        {!isLoaded ? <RotatingLine/> : 
+                        {!isLoaded && currentSong ? <RotatingLine/> : 
                             (isPlay ? 
                             <PiPauseCircle onClick={() => handlePlay()} className="size-10 cursor-pointer hover:text-active"/>
                             : <IoPlayCircleOutline onClick={() => handlePlay()} className="size-10 cursor-pointer hover:text-active"/>
@@ -189,7 +190,7 @@ const Player = ({isShowRSidebar, setIsShowRSidebar}) => {
                             <div ref={ref} className={`rounded-md absolute h-full bg-slider-bar top-0 left-0 transition-all ease-linear`}></div>
                             <div ref={refDot} className="size-3 hidden group-hover:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-slider-bar transition-all ease-linear rounded-full"></div>
                         </div>
-                        <span className="text-sm">{moment.utc(song?.duration*1000).format('mm:ss')}</span>
+                        <span className="text-sm">{song ? moment.utc(song?.duration*1000).format('mm:ss') : ''}</span>
                     </div>
                 </div>
                 <div className="w-[30%] flex justify-end gap-3 items-center">

@@ -7,7 +7,10 @@ const path = {
     ALBUM: 'album/:title/:id',
     PLAYLIST: 'playlist/:title/:id',
     ZINGCHART: 'zing-chart-tuan/:title/:id',
-    TOP100: 'top100'
+    TOP100: 'top100',
+    SEARCH: 'tim-kiem',
+    ALL: 'tat-ca',
+    SONG: 'bai-hat'
 }
 
 export default path
