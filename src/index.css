@@ -26,3 +26,7 @@
 				 1px -1px 0 #e35050,
 				-1px -1px 0 #e35050;
 }
+
+.ktn-linear-bg{
+	background-image:  linear-gradient(286.07deg,rgba(206,217,217,0.95) 55.21%,rgba(206,217,217,0.6))
+}

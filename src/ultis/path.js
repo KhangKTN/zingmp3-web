@@ -10,7 +10,10 @@ const path = {
     TOP100: 'top100',
     SEARCH: 'tim-kiem',
     ALL: 'tat-ca',
-    SONG: 'bai-hat'
+    SONG: 'bai-hat',
+    SEARCH_PLAYLIST: 'playlist',
+    ARTIST: 'nghe-si/:name',
+    ARTIST_1: '*'
 }
 
 export default path

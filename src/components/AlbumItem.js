@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import HoverAlbum from "./HoverAlbum"
 
-const AlbumItem = ({item}) => {
+const AlbumItem = ({item, single}) => {
     const [isHover, setIsHover] = useState(false)
 
     return(
@@ -18,13 +18,18 @@ const AlbumItem = ({item}) => {
                 </div>
                 <h1 className="mt-1 text-gray-600 hover:text-active cursor-pointer truncate">{item?.title}</h1>
             </Link>
-                {item?.artists.map((item, index) => (
-                    index < 3 &&
-                    <h1 key={index} className="text-xs text-gray-500 inline">
-                        <Link to={item.link} className="hover:underline hover:text-active" key={item.id}>{item.name}</Link>
-                        <span>{index < 2 ? ', ' : ',...'}</span>
-                    </h1>
-                ))}
+            {single && <h1 className=" text-gray-500 hover:text-active cursor-pointer text-sm truncate">{item?.releaseDateText}</h1>}
+            {!single &&
+                <div className="">
+                    {item?.artists?.map((item, index, arr) => (
+                        index < 3 &&
+                        <div key={index} className="text-xs text-gray-500 inline">
+                            <Link to={item?.link} className="hover:underline hover:text-active" key={item?.id}>{item?.name}</Link>
+                            <span className="">{arr.length > 2 ? (index < 2 ? ', ' : ',...' ) : (index != arr.length - 1 && ', ')}</span>
+                        </div>
+                    ))}
+                </div>
+            }
         </div>
     )
 }

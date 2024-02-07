@@ -20,23 +20,25 @@ const Slider = () => {
             arr.push(i)
             if(i > 2) sliders[i].classList.add('hidden')
         }
+        
         const interval = setInterval(() => {
             let ele = arr.shift()
             arr.push(ele)
-            for(let i = 0; i < banner.length; i++){
-                sliders[i].classList.remove('animate-slide-right', 'order-last', 'z-5', 'hidden')
-                sliders[i].classList.remove('animate-slide-left', 'order-first', 'z-10', 'hidden')
-                sliders[i].classList.remove('animate-slide-left-two', 'order-2', 'z-10', 'hidden')
-                if(i > 2){
-                    sliders[arr[i]].classList.add('hidden')
-                    // console.log(sliders[arr[i]]);
+                for(let i = 0; i < banner.length; i++){
+                    sliders[i].classList.remove('animate-slide-right', 'animate-slide-left', 'animate-slide-left-two', 'order-last', 'order-first', 'order-2', 'z-10', 'z-5', 'hidden')
+                    // sliders[i].classList.remove('animate-slide-left', 'order-first', 'z-10', 'hidden')
+                    // sliders[i].classList.remove('animate-slide-left-two', 'order-2', 'z-10', 'hidden')
+                    if(i > 2){
+                        sliders[arr[i]].classList.add('hidden')
+                    }
                 }
-            }
-            if(arr.length > 4 && arr[arr.length - 1] === 0) sliders[arr[arr.length - 2]].classList.add('hidden')
-            sliders[arr[2]]?.classList.add('animate-slide-right', 'order-last', 'z-5')
-            sliders[arr[0]]?.classList.add('animate-slide-left', 'order-first', 'z-10')
-            sliders[arr[1]]?.classList.add('animate-slide-left-two', 'order-2', 'z-10')
-        }, 5000);
+                for(let i = 3; i < arr.length; i++){
+                    if(!sliders[arr[i]].classList.contains('hidden')) sliders[arr[i]].classList.add('hidden')
+                }
+                sliders[arr[2]]?.classList.add('animate-slide-right', 'order-last', 'z-5')
+                sliders[arr[0]]?.classList.add('animate-slide-left', 'order-first', 'z-10')
+                sliders[arr[1]]?.classList.add('animate-slide-left-two', 'order-2', 'z-10')
+            }, 5000);
         return () => {
             interval && clearInterval(interval)
         }

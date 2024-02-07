@@ -87,6 +87,33 @@ const search = (keyword) => new Promise(async(resolve, reject) => {
     }
 })
 
+const getArtistSong = (artists) => new Promise(async(resolve, reject) => {
+    try {
+        const res = await axios({
+            url: `/artistsong?id=${artists}&page=1&count=100`,
+            method: 'get',
+            // params: {id: artists, page: 1, count: 15}
+        })//id=IWZ99099, IWZ9896A&page=1&count=15
+        resolve(res)
+    } catch (error) {
+        reject(error)
+    }
+})
+
+const getArtistAlbum = (artist) => new Promise(async(resolve, reject) => {
+    try {
+        const res = await axios({
+            url: `/artist`,
+            method: 'get',
+            params: {name: artist}
+        })
+        resolve(res)
+    } catch (error) {
+        reject(error)
+    }
+})
+
 export {
-    getHome, getSongMp3, getInfoSong, getPlaylist, getNewReleaseChart, getTop100, search
+    getHome, getSongMp3, getInfoSong, getPlaylist, getNewReleaseChart, getTop100, search,
+    getArtistSong, getArtistAlbum
 }

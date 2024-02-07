@@ -39,7 +39,7 @@ const SongRelease = ({song, order, percent, isShowDate, text, hover, bg, size, p
     }
 
     return(
-        <div id='song-release' key={song?.encodeId} 
+        <div key={song?.encodeId} 
             className={`flex w-full items-center justify-between songs-center rounded-lg gap-3 
                 ${hover && 'hover:bg-sidebar'} ${bg && bg}
                 ${padding ? 'p-2' : 'p-3'}`

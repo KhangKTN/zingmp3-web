@@ -15,7 +15,7 @@ const SongList = () => {
             </div>
             <div className="flex flex-col min-h-full">
                 {songs?.map((item) => (
-                    <Song key={item.encodeId} song={item}/>
+                    <Song key={item.encodeId} song={item} isAlbum={1}/>
                 ))}
             </div>
         </div>

@@ -1,5 +1,5 @@
 import { icons } from "../ultis/icon"
-import Search from "./Search"
+import SearchBar from "./SearchBar"
 
 const { PiArrowLeftThin, PiArrowRightThin } = icons
 
@@ -12,7 +12,7 @@ const Header = () => {
                     <PiArrowRightThin className="size-6 hover:text-active cursor-pointer"/>
                 </div>
                 <div className="flex-1">
-                    <Search/>
+                    <SearchBar/>
                 </div>
             </div>
             <div className="w-[30%] mx-auto text-right">Account</div>
