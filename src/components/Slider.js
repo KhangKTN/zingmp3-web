@@ -22,8 +22,8 @@ const Slider = () => {
         }
         
         const interval = setInterval(() => {
-            let ele = arr.shift()
-            arr.push(ele)
+                let ele = arr.shift()
+                arr.push(ele)
                 for(let i = 0; i < banner.length; i++){
                     sliders[i].classList.remove('animate-slide-right', 'animate-slide-left', 'animate-slide-left-two', 'order-last', 'order-first', 'order-2', 'z-10', 'z-5', 'hidden')
                     // sliders[i].classList.remove('animate-slide-left', 'order-first', 'z-10', 'hidden')

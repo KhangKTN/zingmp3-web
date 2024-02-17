@@ -13,7 +13,11 @@ const path = {
     SONG: 'bai-hat',
     SEARCH_PLAYLIST: 'playlist',
     ARTIST: 'nghe-si/:name',
-    ARTIST_1: '*'
+    ARTIST_1: '*',
+    ARTIST_SONG: ':name/bai-hat',
+    NEW_RELEASE: 'new-release',
+    NR_SONG: 'song',
+    NR_ALBUM: 'album'
 }
 
 export default path

@@ -15,21 +15,17 @@ const Artists = ({artists}) => {
 
     return(
         <div>
-            <div className="flex items-center justify-between mt-6 my-4">
+            <div className="flex items-center justify-between mt-12 mb-4">
                 <h1 className="text-xl font-bold">Nghệ Sĩ/OA</h1>
-                <div className="flex items-center text-gray-500 cursor-pointer hover:text-active">
-                    <button className="">TẤT CẢ</button>
-                    <IoIosArrowForward className="size-5 ml-3" />
-                </div>
             </div>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-5">
                 {artists?.map((item, index) => (
                     index < 4 &&
                     <div key={item.link} className="flex flex-col items-center">
                         <div className="rounded-full mb-3 overflow-hidden cursor-pointer">
                             <Link to={item.link}><img className="w-full hover:scale-110 transition-all duration-500" src={item.thumbnail}></img></Link>
                         </div>
-                        <Link className="hover:underline hover:text-active">{item.name}</Link>
+                        <Link to={item.link} className="hover:underline hover:text-active">{item.name}</Link>
                         <span className="text-sm text-gray-500">{convertFollower(item.totalFollow)} quan tâm</span>
                     </div>
                 ))}

@@ -93,7 +93,7 @@ const getArtistSong = (artists) => new Promise(async(resolve, reject) => {
             url: `/artistsong?id=${artists}&page=1&count=100`,
             method: 'get',
             // params: {id: artists, page: 1, count: 15}
-        })//id=IWZ99099, IWZ9896A&page=1&count=15
+        })
         resolve(res)
     } catch (error) {
         reject(error)

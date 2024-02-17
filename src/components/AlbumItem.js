@@ -20,12 +20,12 @@ const AlbumItem = ({item, single}) => {
             </Link>
             {single && <h1 className=" text-gray-500 hover:text-active cursor-pointer text-sm truncate">{item?.releaseDateText}</h1>}
             {!single &&
-                <div className="">
+                <div>
                     {item?.artists?.map((item, index, arr) => (
                         index < 3 &&
                         <div key={index} className="text-xs text-gray-500 inline">
                             <Link to={item?.link} className="hover:underline hover:text-active" key={item?.id}>{item?.name}</Link>
-                            <span className="">{arr.length > 2 ? (index < 2 ? ', ' : ',...' ) : (index != arr.length - 1 && ', ')}</span>
+                            <span className="">{arr.length > 2 ? (index < 2 ? ', ' : ',...' ) : (index !== arr.length - 1 && ', ')}</span>
                         </div>
                     ))}
                 </div>

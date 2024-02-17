@@ -7,7 +7,7 @@ import * as actions from '../store/actions'
 import { toast } from 'react-toastify';
 import { RotatingLine } from "./";
 
-const {IoMdHeartEmpty, BsThreeDots, IoPlayCircleOutline, TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled,
+const { IoPlayCircleOutline, TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled,
     TbRepeat, TbArrowsShuffle, PiPauseCircle, TbRepeatOnce, PiPlaylistFill, IoVolumeMuteOutline, IoVolumeMediumOutline
 } = icons
 

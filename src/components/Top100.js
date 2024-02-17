@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom";
 import {icons} from '../ultis/icon'
-import {AlbumItem, HoverAlbum} from "../components";
-import { useState } from "react";
+import {AlbumItem} from "../components";
 
 const {IoIosArrowForward} = icons
 

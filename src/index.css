@@ -28,5 +28,9 @@
 }
 
 .ktn-linear-bg{
-	background-image:  linear-gradient(286.07deg,rgba(206,217,217,0.95) 55.21%,rgba(206,217,217,0.6))
+	background: hsla(39, 51%, 85%, 1);
+	background: linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
+	background: -moz-linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
+	background: -webkit-linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ECDEC4", endColorstr="#92E1E4", GradientType=1 );
 }
