@@ -11,7 +11,7 @@ const Slider = () => {
     let res = useSelector(state => state.app).banner
     
     useEffect(() => {
-        if(res && res.length > 0 && banner.length === 0){
+        if(res && res?.length > 0 && banner?.length === 0){
             setBanner(res[0].items)
         } 
         let arr = []
@@ -24,7 +24,7 @@ const Slider = () => {
         const interval = setInterval(() => {
                 let ele = arr.shift()
                 arr.push(ele)
-                for(let i = 0; i < banner.length; i++){
+                for(let i = 0; i < banner?.length; i++){
                     sliders[i].classList.remove('animate-slide-right', 'animate-slide-left', 'animate-slide-left-two', 'order-last', 'order-first', 'order-2', 'z-10', 'z-5', 'hidden')
                     // sliders[i].classList.remove('animate-slide-left', 'order-first', 'z-10', 'hidden')
                     // sliders[i].classList.remove('animate-slide-left-two', 'order-2', 'z-10', 'hidden')

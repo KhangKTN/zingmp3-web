@@ -20,7 +20,7 @@ const SearchAlbum = () => {
 
     return(
         <>
-        {searchData.length === 0 ? <Loading/> :
+        {searchData?.length === 0 ? <Loading/> :
             <div>
                 <h1 className="font-bold text-xl my-6">Playlist/Album</h1>
                 <div className="grid grid-cols-4 xl:grid-cols-5 gap-5 w-full mt-3">

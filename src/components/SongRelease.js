@@ -47,7 +47,7 @@ const SongRelease = ({song, order, percent, isShowDate, text, hover, bg, size, p
         >
             {order && 
                 <span className={`max-w-[8%] min-w-[8%] text-2xl font-bold fill-transparent outline-2 text-yellow-50
-                    ${order === 1 ? 'ktn-shadow-top1' : order === 2 ? 'ktn-shadow-top2' : 'ktn-shadow-top3'}
+                    ${order === 1 ? 'ktn-shadow-top1' : order === 2 ? 'ktn-shadow-top2' : order === 3 ? 'ktn-shadow-top3' : 'ktn-shadow-top4'}
                 `}
                 >{order}
                 </span>

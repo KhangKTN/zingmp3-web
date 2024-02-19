@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import SongRelease from './SongRelease'
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
+import path from '../ultis/path'
 
 const ZingChart = () => {
     const [data, setData] = useState()
@@ -95,12 +96,12 @@ const ZingChart = () => {
             <h1 className="font-bold bg-gradient-to-r from-orange-400 via-pink-500 to-indigo-400 inline-block text-transparent text-2xl bg-clip-text">#zingchart</h1>
             <div className="flex w-full flex-col xl:flex-row h-[90%] my-3">
                 <div className="xl:w-[40%] mt-10 xl:mt-0 w-full flex flex-col gap-3 justify-center order-2 xl:order-1">
-                    {rank?.filter((item ,index) => index < 3).map((item, index) => (
+                    {rank?.filter((item, index) => index < 3).map((item, index) => (
                         <div key={item.encodeId} className={`bg-[#ffffff21] rounded-md px-3 hover:bg-[#ffffff4a] ${selected?.songSelected === item.encodeId && 'bg-[#ffffff4a]'}`}>
                             <SongRelease song={item} text={'text-white'} order={index+1} percent={item?.score / chart?.totalScore} hover={0}/> 
                         </div>
                     ))}
-                    <Link>
+                    <Link to={path.ZINGCHART}>
                         <button className='outline outline-offset-2 outline-1 mx-auto block hover:bg-[#ffffff73] rounded-full text-white px-5 py-1'>Xem thêm</button>
                     </Link>
                 </div>

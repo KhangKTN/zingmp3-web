@@ -18,12 +18,17 @@ const SidebarLeft = () => {
             </div>
             <div className='flex flex-col'>
                 {sidebarLeftMenu.map((item, index) => (
+                    <>
                     <NavLink key={item.path} to={item.path} className={({isActive}) => isActive ? active : notActive}>
                         <div className='flex items-center gap-4 justify-center lg:justify-start'>
                             <span>{item.icon}</span>
                             <span className='hidden animate-text-animate lg:inline'>{item.text}</span>
                         </div>
                     </NavLink>
+                    {index === 3 && 
+                    <div className='h-[1px] bg-gray-400 my-6 mx-4'></div>
+                    }
+                    </>
                 ))}
             </div>
         </div>

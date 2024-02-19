@@ -18,6 +18,7 @@ const Player = ({isShowRSidebar, setIsShowRSidebar}) => {
     const [repeat, setRepeat] = useState('')
     let [audioController, setAudioController] = useState(new Audio())
     const [volume, setVolume] = useState(1)
+    // const [is]
     const [isLoaded, setIsLoaded] = useState(false)
     
     const {currentSong, isPlay, songs} = useSelector(state => state.music)

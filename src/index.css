@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .ktn-shadow-top1{
-    color: #614475;
+    color: #ffffff53;
 	font-size: 30px;
 	text-shadow: -1px 1px 0 #4a90e2,
 				  1px 1px 0 #4a90e2,
@@ -11,7 +11,7 @@
 				-1px -1px 0 #4a90e2;
 }
 .ktn-shadow-top2{
-    color: #614475;
+    color: #ffffff53;
 	font-size: 30px;
 	text-shadow: -1px 1px 0 #50e3c2,
 				  1px 1px 0 #50e3c2,
@@ -19,12 +19,20 @@
 				-1px -1px 0 #50e3c2;
 }
 .ktn-shadow-top3{
-    color: #614475;
+    color: #ffffff53;
 	font-size: 30px;
 	text-shadow: -1px 1px 0 #e35050,
 				  1px 1px 0 #e35050,
 				 1px -1px 0 #e35050,
 				-1px -1px 0 #e35050;
+}
+.ktn-shadow-top4{
+    color: #ced9d9;
+	font-size: 30px;
+	text-shadow: -1px 1px 0 #7a7676,
+				  1px 1px 0 #7a7676,
+				 1px -1px 0 #7a7676,
+				-1px -1px 0 #7a7676;
 }
 
 .ktn-linear-bg{

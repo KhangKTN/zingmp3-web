@@ -1,6 +1,8 @@
 import { icons } from "./icon"
 
-const {MdOutlineLibraryMusic, FaRegChartBar, FaRegDotCircle, IoMusicalNotes} = icons
+const {MdOutlineLibraryMusic, FaRegChartBar, FaRegDotCircle, IoMusicalNotes, PiStarLight, PiMusicNotesPlusDuotone, TbCategory,
+    IoRadioSharp
+} = icons
 
 export const sidebarLeftMenu = [
     {
@@ -16,12 +18,27 @@ export const sidebarLeftMenu = [
     },
     {
         path: 'follow',
-        text: 'Theo dõi',
-        icon: <MdOutlineLibraryMusic className="w-[24px] h-auto"/>
+        text: 'Radio',
+        icon: <IoRadioSharp className="w-[24px] h-auto"/>
     },
     {
         path: 'mymusic',
         text: 'Cá nhân',
         icon: <IoMusicalNotes className="w-[24px] h-auto"/>
+    },
+    {
+        path: 'moi-phat-hanh',
+        text: 'BXH Nhạc Mới',
+        icon: <PiMusicNotesPlusDuotone className="w-[24px] h-auto"/>
+    },
+    {
+        path: 'hub',
+        text: 'Chủ đề & Thể loại',
+        icon: <TbCategory className="w-[24px] h-auto"/>
+    },
+    {
+        path: 'top100',
+        text: 'Top 100',
+        icon: <PiStarLight className="w-[24px] h-auto"/>
     }
 ]

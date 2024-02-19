@@ -113,7 +113,19 @@ const getArtistAlbum = (artist) => new Promise(async(resolve, reject) => {
     }
 })
 
+const getChart = (artist) => new Promise(async(resolve, reject) => {
+    try {
+        const res = await axios({
+            url: `/charthome`,
+            method: 'get',
+        })
+        resolve(res)
+    } catch (error) {
+        reject(error)
+    }
+})
+
 export {
     getHome, getSongMp3, getInfoSong, getPlaylist, getNewReleaseChart, getTop100, search,
-    getArtistSong, getArtistAlbum
+    getArtistSong, getArtistAlbum, getChart
 }

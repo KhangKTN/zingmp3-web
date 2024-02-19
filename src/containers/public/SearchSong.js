@@ -20,7 +20,7 @@ const SearchSong = () => {
 
     return(
         <div className="flex flex-col">
-            {searchData.length === 0 ? <Loading/> :
+            {searchData?.length === 0 ? <Loading/> :
                 <div>
                     <h1 className="text-xl font-bold my-6">Bài hát</h1>
                     {searchData?.map((item) => ( 

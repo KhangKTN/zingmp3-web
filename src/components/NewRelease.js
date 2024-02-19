@@ -8,7 +8,7 @@ import path from "../ultis/path";
 const {IoIosArrowForward} = icons
 
 const NewRelease = () => {
-    const [data, setData] = useState({})
+    const [data, setData] = useState(null)
     const [select, setSelect] = useState('all')
     
     const {newRelease} = useSelector(state => state.app)
@@ -33,7 +33,7 @@ const NewRelease = () => {
                     <button onClick={() => handleChange('vPop')} className={select === 'vPop' ? styleAct : styleNotAct}>VIỆT NAM</button>
                     <button onClick={() => handleChange('others')} className={select === 'others' ? styleAct : styleNotAct}>KHÁC</button>
                 </div>
-                <Link to={`${path.NEW_RELEASE}/${path.NR_SONG}`}>
+                <Link to={`${path.NEW_RELEASE}/${path.NR_SONG}?filter=all`}>
                     <div className="flex text-gray-500 cursor-pointer hover:text-active">
                         <button className="">TẤT CẢ</button>
                         <IoIosArrowForward className="size-5 ml-3" />
