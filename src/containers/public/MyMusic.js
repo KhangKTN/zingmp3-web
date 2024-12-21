@@ -1,7 +1,5 @@
 const MyMusic = () => {
-    return(
-        <div></div>
-    )
+    return <div></div>
 }
 
 export default MyMusic

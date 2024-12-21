@@ -1,4 +1,4 @@
-import actionTypes from "../actions/actionTypes";
+import actionTypes from '../actions/actionTypes'
 
 const initState = {
     banner: {},
@@ -11,7 +11,7 @@ const initState = {
 }
 
 const appReducer = (state = initState, action) => {
-    switch(action.type){
+    switch (action.type) {
         case actionTypes.GET_HOME:
             return {
                 ...state,
@@ -25,7 +25,7 @@ const appReducer = (state = initState, action) => {
             }
         default:
             return state
-            // break
+        // break
     }
 }
 

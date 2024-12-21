@@ -1,4 +1,4 @@
-import actionTypes from "../actions/actionTypes";
+import actionTypes from '../actions/actionTypes'
 
 const initState = {
     currentSong: '',
@@ -9,40 +9,40 @@ const initState = {
 }
 
 const musicReducer = (state = initState, action) => {
-    switch(action.type){
+    switch (action.type) {
         case actionTypes.SET_CURRENT_SONG:
-            return{
+            return {
                 ...state,
                 currentSong: action.songId || ''
             }
         case actionTypes.PLAY:
-            return{
+            return {
                 ...state,
                 isPlay: action.isPlay
             }
         case actionTypes.IS_NEXT:
-            return{
+            return {
                 ...state,
                 isNext: action.isNext
             }
         case actionTypes.SET_SONGS:
-            return{
+            return {
                 ...state,
                 songs: action.data
             }
         case actionTypes.SONG_RECENT:
             let songRecent = [...state.songRecent]
             let index = songRecent.findIndex(item => item.encodeId === action.songId.encodeId)
-            if(index >= 0) songRecent.splice(index, 1)
+            if (index >= 0) songRecent.splice(index, 1)
             songRecent.unshift(action.songId)
-            if(songRecent.length > 20) songRecent.pop()
+            if (songRecent.length > 20) songRecent.pop()
             // console.log(songRecent);
-            return{
+            return {
                 ...state,
                 songRecent: songRecent
             }
         case actionTypes.CLEAR_RECENT:
-            return{
+            return {
                 ...state,
                 songRecent: []
             }

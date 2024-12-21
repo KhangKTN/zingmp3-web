@@ -1,26 +1,26 @@
-import actionTypes from './actionTypes';
+import actionTypes from './actionTypes'
 
-export const setCurrentSong = (songId) => ({
+export const setCurrentSong = songId => ({
     type: actionTypes.SET_CURRENT_SONG,
     songId
 })
 
-export const setIsPlay = (isPlay) => ({
+export const setIsPlay = isPlay => ({
     type: actionTypes.PLAY,
     isPlay
 })
 
-export const setIsNext = (isNext) => ({
+export const setIsNext = isNext => ({
     type: actionTypes.IS_NEXT,
     isNext
 })
 
-export const setList = (data) => ({
+export const setList = data => ({
     type: actionTypes.SET_SONGS,
     data
 })
 
-export const setSongRecent = (songId) => ({
+export const setSongRecent = songId => ({
     type: actionTypes.SONG_RECENT,
     songId
 })
