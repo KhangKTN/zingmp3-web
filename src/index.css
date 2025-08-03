@@ -2,46 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-.ktn-shadow-top1{
+.ktn-shadow-top1 {
     color: #ffffff53;
-	font-size: 30px;
-	text-shadow: -1px 1px 0 #4a90e2,
-				  1px 1px 0 #4a90e2,
-				 1px -1px 0 #4a90e2,
-				-1px -1px 0 #4a90e2;
+    font-size: 30px;
+    text-shadow: -1px 1px 0 #4a90e2, 1px 1px 0 #4a90e2, 1px -1px 0 #4a90e2, -1px -1px 0 #4a90e2;
 }
 
-.ktn-shadow-top2{
+.ktn-shadow-top2 {
     color: #ffffff53;
-	font-size: 30px;
-	text-shadow: -1px 1px 0 #50e3c2,
-				  1px 1px 0 #50e3c2,
-				 1px -1px 0 #50e3c2,
-				-1px -1px 0 #50e3c2;
+    font-size: 30px;
+    text-shadow: -1px 1px 0 #50e3c2, 1px 1px 0 #50e3c2, 1px -1px 0 #50e3c2, -1px -1px 0 #50e3c2;
 }
 
-.ktn-shadow-top3{
+.ktn-shadow-top3 {
     color: #ffffff53;
-	font-size: 30px;
-	text-shadow: -1px 1px 0 #e35050,
-				  1px 1px 0 #e35050,
-				 1px -1px 0 #e35050,
-				-1px -1px 0 #e35050;
+    font-size: 30px;
+    text-shadow: -1px 1px 0 #e35050, 1px 1px 0 #e35050, 1px -1px 0 #e35050, -1px -1px 0 #e35050;
 }
 
-.ktn-shadow-top4{
+.ktn-shadow-top4 {
     color: #ced9d9;
-	font-size: 30px;
-	text-shadow: -1px 1px 0 #7a7676,
-				  1px 1px 0 #7a7676,
-				 1px -1px 0 #7a7676,
-				-1px -1px 0 #7a7676;
+    font-size: 30px;
+    text-shadow: -1px 1px 0 #7a7676, 1px 1px 0 #7a7676, 1px -1px 0 #7a7676, -1px -1px 0 #7a7676;
 }
 
-.ktn-linear-bg{
-	background: hsla(39, 51%, 85%, 1);
-	background: linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
-	background: -moz-linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
-	background: -webkit-linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ECDEC4", endColorstr="#92E1E4", GradientType=1 );
+.ktn-linear-bg {
+    background: hsla(39, 51%, 85%, 1);
+    background: linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
+    background: -moz-linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
+    background: -webkit-linear-gradient(225deg, hsla(39, 51%, 85%, 1) 0%, hsla(182, 60%, 73%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ECDEC4", endColorstr="#92E1E4", GradientType=1 );
 }

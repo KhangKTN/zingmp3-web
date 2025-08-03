@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { getArtistAlbum, getArtistSong } from '../../apis/homeAPI'
+import { getArtistAlbum, getArtistSong } from '../../apis/home.api'
 import { Loading } from '../../components'
 import Song from '../../components/Song'
 
@@ -29,7 +29,7 @@ const ArtistSong = () => {
                 {songs.length !== 0 && (
                     <div>
                         <h1 className='font-bold text-xl capitalize mt-12 mb-4'>Tất cả bài hát</h1>
-                        {songs?.map(item => (
+                        {songs?.map((item) => (
                             <Song key={item.encodeId} song={item} isAlbum={1} />
                         ))}
                     </div>

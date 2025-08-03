@@ -1,27 +1,27 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { Route, Routes } from 'react-router-dom'
 import {
     Album,
-    SearchAll,
+    Artist,
+    ArtistSong,
     Home,
     Login,
     MyMusic,
+    NewRelease,
+    NrAlbum,
+    NrSong,
     Public,
     Search,
-    Top100,
-    ZingChart,
-    SearchSong,
     SearchAlbum,
-    Artist,
-    ArtistSong,
-    NewRelease,
-    NR_Song,
-    NR_Album,
-    WeekRank
+    SearchAll,
+    SearchSong,
+    Top100,
+    WeekRank,
+    ZingChart
 } from './containers/public/'
-import { Routes, Route } from 'react-router-dom'
-import path from './ultis/path'
 import * as actions from './store/actions'
+import path from './ultis/path'
 
 const App = () => {
     const dispatch = useDispatch()
@@ -51,8 +51,8 @@ const App = () => {
                     <Route path={path.ARTIST_1} element={<Artist />}></Route>
                     <Route path={path.ARTIST_SONG} element={<ArtistSong />}></Route>
                     <Route path={path.NEW_RELEASE} element={<NewRelease />}>
-                        <Route path={path.NR_SONG} element={<NR_Song />} />
-                        <Route path={path.NR_ALBUM} element={<NR_Album />} />
+                        <Route path={path.NR_SONG} element={<NrSong />} />
+                        <Route path={path.NR_ALBUM} element={<NrAlbum />} />
                     </Route>
 
                     <Route path={path.STAR} element={<Home />} />

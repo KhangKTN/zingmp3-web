@@ -1,3 +1,4 @@
+import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 import { sidebarLeftMenu } from '../ultis/menu'
@@ -21,7 +22,7 @@ const SidebarLeft = () => {
             </div>
             <div className='flex flex-col'>
                 {sidebarLeftMenu.map((item, index) => (
-                    <>
+                    <React.Fragment key={item.path}>
                         <NavLink
                             key={item.path}
                             to={item.path}
@@ -33,7 +34,7 @@ const SidebarLeft = () => {
                             </div>
                         </NavLink>
                         {index === 3 && <div className='h-[1px] bg-gray-400 my-6 mx-4'></div>}
-                    </>
+                    </React.Fragment>
                 ))}
             </div>
         </div>

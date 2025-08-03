@@ -1,11 +1,11 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
-import App from './App'
 import { Provider } from 'react-redux'
-import reduxConfig from './redux'
 import { BrowserRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
+import App from './App'
+import { ErrorBoundary } from './containers/public'
+import './index.css'
+import reduxConfig from './redux'
 
 const { store, persistor } = reduxConfig()
 
@@ -14,7 +14,9 @@ root.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
             <BrowserRouter>
-                <App />
+                <ErrorBoundary>
+                    <App />
+                </ErrorBoundary>
             </BrowserRouter>
         </PersistGate>
     </Provider>

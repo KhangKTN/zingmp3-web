@@ -1,27 +1,19 @@
-import { memo, useEffect, useState } from 'react'
+import { memo } from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate, useLocation, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const SeasonTheme = () => {
-    const { seasonTheme } = useSelector(state => state.app)
-    const [seasonData, setData] = useState({})
-
-    const navigate = useNavigate()
-    const { pathname } = useLocation()
-
-    useEffect(() => {
-        seasonTheme && setData(seasonTheme)
-    }, [seasonTheme, pathname])
+    const { seasonTheme } = useSelector((state) => state.app)
 
     return (
         <>
-            {seasonData?.length > 0 &&
-                seasonData.map((item, index) => (
+            {seasonTheme?.length > 0 &&
+                seasonTheme.map((item) => (
                     <div key={item.sectionId} className='mt-12 w-full'>
                         <h1 className='text-2xl capitalize font-semibold'>{item?.title}</h1>
                         <div className='grid grid-cols-4 xl:grid-cols-5 gap-5 w-full mt-3'>
                             {item?.items?.length > 0 &&
-                                item?.items?.map(item => (
+                                item?.items?.map((item) => (
                                     <Link key={item.link} to={item.link?.split('.')[0]}>
                                         <div key={item.encodeId} className='group'>
                                             <div className='w-full overflow-hidden hover:opacity-80 rounded-lg'>

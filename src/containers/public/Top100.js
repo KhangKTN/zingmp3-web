@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getTop100 } from '../../apis/homeAPI'
+import { getTop100 } from '../../apis/home.api'
 import { AlbumItem } from '../../components'
 
 const Top100 = () => {
@@ -22,7 +22,7 @@ const Top100 = () => {
                 <div className='mt-10' key={item.title}>
                     <h1 className='font-bold text-xl mb-3'>{item.title}</h1>
                     <div className='grid grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-10'>
-                        {item.items.map(item => (
+                        {item.items.map((item) => (
                             <AlbumItem key={item.encodeId} item={item} />
                         ))}
                     </div>

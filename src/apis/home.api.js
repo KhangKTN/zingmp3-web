@@ -13,7 +13,7 @@ const getHome = () =>
         }
     })
 
-const getSongMp3 = id =>
+const getSongMp3 = (id) =>
     new Promise(async (resolve, reject) => {
         try {
             const res = await axios({
@@ -27,7 +27,7 @@ const getSongMp3 = id =>
         }
     })
 
-const getInfoSong = id =>
+const getInfoSong = (id) =>
     new Promise(async (resolve, reject) => {
         try {
             const res = await axios({
@@ -41,7 +41,7 @@ const getInfoSong = id =>
         }
     })
 
-const getPlaylist = id =>
+const getPlaylist = (id) =>
     new Promise(async (resolve, reject) => {
         try {
             const res = await axios({
@@ -80,7 +80,7 @@ const getTop100 = () =>
         }
     })
 
-const search = keyword =>
+const search = (keyword) =>
     new Promise(async (resolve, reject) => {
         try {
             const res = await axios({
@@ -94,7 +94,7 @@ const search = keyword =>
         }
     })
 
-const getArtistSong = artists =>
+const getArtistSong = (artists) =>
     new Promise(async (resolve, reject) => {
         try {
             const res = await axios({
@@ -108,7 +108,7 @@ const getArtistSong = artists =>
         }
     })
 
-const getArtistAlbum = artist =>
+const getArtistAlbum = (artist) =>
     new Promise(async (resolve, reject) => {
         try {
             const res = await axios({
@@ -122,7 +122,7 @@ const getArtistAlbum = artist =>
         }
     })
 
-const getChart = artist =>
+const getChart = (artist) =>
     new Promise(async (resolve, reject) => {
         try {
             const res = await axios({
@@ -136,14 +136,14 @@ const getChart = artist =>
     })
 
 export {
-    getHome,
-    getSongMp3,
-    getInfoSong,
-    getPlaylist,
-    getNewReleaseChart,
-    getTop100,
-    search,
-    getArtistSong,
     getArtistAlbum,
-    getChart
+    getArtistSong,
+    getChart,
+    getHome,
+    getInfoSong,
+    getNewReleaseChart,
+    getPlaylist,
+    getSongMp3,
+    getTop100,
+    search
 }

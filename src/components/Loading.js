@@ -79,7 +79,6 @@ const Loading = () => {
                     strokeWidth='24'
                 ></line>
             </svg>
-            <span className='text-4xl font-medium text-teal-600'>Loading...</span>
         </div>
     )
 }

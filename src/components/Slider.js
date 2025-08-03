@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import * as actions from '../store/actions'
 import { useNavigate } from 'react-router-dom'
+import * as actions from '../store/actions'
 
 const Slider = () => {
     const [banner, setBanner] = useState([])
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    let res = useSelector(state => state.app).banner
+    const res = useSelector((state) => state.app).banner
 
     useEffect(() => {
         if (res && res?.length > 0 && banner?.length === 0) {
@@ -54,7 +54,7 @@ const Slider = () => {
         }
     }, [res, banner])
 
-    const handleClick = item => {
+    const handleClick = (item) => {
         if (item?.type === 1) {
             dispatch(actions.setCurrentSong(item.encodeId))
             dispatch(actions.setIsPlay(true))
@@ -68,7 +68,7 @@ const Slider = () => {
         <div className='flex gap-3 animate-slide-in-elliptic-left-fwd justify-center w-full'>
             {banner &&
                 banner.length > 0 &&
-                banner.map(item => (
+                banner.map((item) => (
                     <img
                         onClick={() => handleClick(item)}
                         key={item.encodeId}

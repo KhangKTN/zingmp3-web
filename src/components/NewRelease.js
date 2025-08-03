@@ -1,32 +1,28 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import SongRelease from './SongRelease'
-import { icons } from '../ultis/icon'
 import { Link } from 'react-router-dom'
+import { icons } from '../ultis/icon'
 import path from '../ultis/path'
+import SongRelease from './SongRelease'
 
 const { IoIosArrowForward } = icons
 
 const NewRelease = () => {
-    const [data, setData] = useState(null)
+    // const [data, setData] = useState(null)
     const [select, setSelect] = useState('all')
 
-    const { newRelease } = useSelector(state => state.app)
+    const { newRelease } = useSelector((state) => state.app)
 
     const styleAct = 'px-5 py-1 border-[1px] border-slate-400 rounded-full bg-slider-bar text-slate-50'
     const styleNotAct = 'px-5 py-1 border-[1px] border-slate-400 rounded-full bg-button text-gray-600'
 
-    useEffect(() => {
-        newRelease && setData(newRelease[0])
-    }, [newRelease])
-
-    const handleChange = value => {
+    const handleChange = (value) => {
         setSelect(value)
     }
 
     return (
         <div className='mt-12 w-full'>
-            <h1 className='text-2xl capitalize font-semibold'>{data?.title}</h1>
+            <h1 className='text-2xl capitalize font-semibold'>{newRelease?.title}</h1>
             <div className='flex justify-between items-center my-3 text-sm'>
                 <div className='flex gap-3'>
                     <button onClick={() => handleChange('all')} className={select === 'all' ? styleAct : styleNotAct}>
@@ -50,8 +46,8 @@ const NewRelease = () => {
                 </Link>
             </div>
             <div className='grid grid-cols-2 xl:grid-cols-3 auto-rows-3 gap-x-10 gap-y-[2px] w-full max-h-[342px] overflow-hidden mt-3'>
-                {data?.items &&
-                    data?.items[select]?.map(item => (
+                {newRelease[0]?.items &&
+                    newRelease[0]?.items[select]?.map((item) => (
                         <SongRelease key={item.encodeId} song={item} isShowDate={1} hover={1} />
                     ))}
             </div>

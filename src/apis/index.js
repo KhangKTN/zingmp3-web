@@ -1,1 +1,1 @@
-export * from './homeAPI'
+export * from './home.api'

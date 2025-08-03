@@ -1,9 +1,10 @@
-import actionTypes from './actionTypes'
 import * as apis from '../../apis'
+import actionTypes from './actionTypes'
 
-export const getHomePage = () => async dispatch => {
+export const getHomePage = () => async (dispatch) => {
     try {
-        let res = await apis.getHome()
+        const res = await apis.getHome()
+
         if (res?.data.err === 0) {
             dispatch({
                 type: actionTypes.GET_HOME,
